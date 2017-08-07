@@ -1,5 +1,7 @@
 window.notif = window.notif || {};
+notif.css = ".notif,.notif.shown{transition-duration:.4s}.notifs_con{position:fixed;right:10px;bottom:20px}.notif{transform:scale(0,0);position:relative;right:-1000px;background:#00689A;color:#f2f2f2;width:300px;margin-top:20px;cursor:pointer;height:60px}.notif_icon{width:20%;justify-content:center;align-items:center;height:100%;background:#2f2f2f}.notif_group{width:80%;height:100%;display:inline-table!important;position:relative;top:-19px}.notif_group>*{display:table;width:calc(100% - 6px);padding:3px}.notif.shown{box-sizing:border-box;right:0!important;transform:scale(1,1)!important}.notif>*{display:inline-flex}.notif_title{background:#9acd32}";
 notif.init = function() {
+    document.querySelector("head").innerHTML += "<style>" + notif.css + "</style>";
     document.querySelector("body").innerHTML += "<div class='notifs_con'></div>";
     notif.con = document.querySelector(".notifs_con");
 };
